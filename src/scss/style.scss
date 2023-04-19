@@ -1,0 +1,146 @@
+@import "fonts";
+@import "partials/variables";
+@import "partials/header";
+@import "partials/content";
+@import "partials/team";
+@import "partials/clients";
+@import "partials/publications";
+@import "partials/footer";
+@import "partials/services__child-style";
+@import "partials/popup";
+@import "partials/about-us";
+@import "partials/mixin";
+
+body{
+	background-color: #fff;
+	font: 400 16px/26px 'Montserrat', sans-serif;
+	color: #000;
+	margin: 0;
+}
+
+.wrapper{
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.container{
+	padding: 0 160px;
+}
+
+.content__container{
+	padding-left:280px;
+	padding-right: 280px;
+}
+
+.title{
+	margin: 0;
+	font-weight: 700;
+	@include fontz-h (38px, 46px);
+	background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);	
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.title-h3{
+	margin: 0;
+	font-weight: 700;
+	@include fontz-h(22px, 27px);
+}
+
+.breadcrumbs{
+	text-decoration: none;
+	color: $active-color;
+	font-weight: 700;
+	@include fontz-h(14px, 17px);
+	display:inline-block;
+	margin: 0 0 10px;
+	text-transform: uppercase;
+	position: relative;
+
+	&::after{
+		content: "";
+		position: absolute;
+		top: 3px;
+		right: -12px;
+		width: 6px;
+		height: 6px;
+		border: solid $active-color;
+		border-width: 2px 2px 0 0;
+		transform: rotate(45deg);
+	}
+
+	&:hover{
+		color: $accent-color;
+	}
+
+	&:hover::after{
+		border-color: $accent-color;
+	}
+}
+
+.total__btn{
+	border: none;
+	background-color: $active-color;
+	color: #FFFFFF;
+	border-radius: 10px;
+	box-sizing: border-box;
+	cursor: pointer;
+	text-align: center;
+	min-width: 208px;
+	padding: 18px 30px 18px;
+	font-weight: 700;
+	@include fontz-h (16px, 20px);
+	box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+
+	&:hover{
+		background-color: $hover-blue;
+	}
+
+	&:active{
+		background-color: $active-blue;
+	}
+}
+
+.horizontal-line::after{
+    content: "";
+	position: absolute;
+	left: 0;
+	width: 100%;
+	border-top: 4px solid rgba(255, 255, 255, 0.3);
+	//height: 4px;
+	//background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1919px){
+	.container{
+		padding: 0 60px;
+	}
+
+	.content__container{
+		padding-left: 180px;
+		padding-right: 180px;
+	}
+}
+
+@media(max-width: 1439px){
+	.content__container{
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+
+	
+}
+
+@media (max-width: 767px){
+	.container, .content__container{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.title{
+		@include fontz-h(30px, 37px);
+	}
+}
+
+
+

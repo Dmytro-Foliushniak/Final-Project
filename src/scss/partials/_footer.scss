@@ -1,0 +1,159 @@
+@import "mixin";
+
+// обищшй стиль на кружки
+.footer__circle::after{
+	position: absolute;
+	content: "";
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	top: 50%;
+	right: -10px;
+	background-color: $text-grey;
+	transform: translate( 100%, -50%);
+}
+
+.footer{
+	background-color: $main-bg-color;
+	padding: 32px 0 30px;
+}
+
+.footer__box{
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+
+	// line 2px. 
+	&::before{
+		position: absolute;
+		content: "";
+		top: -30px;
+		left: 0;
+		width: 100%;
+		border-top: 2px solid $separator-grey;
+		transform: translateY(-100%);
+	}
+}
+
+.footer__address{
+	display: flex;
+	margin: 0 0 21px;
+
+	.footer__street{
+		@include fontz-h(16px, 20px);
+		color: $main-text-color;
+		font-style: normal;
+		position: relative;
+		margin: 0 26px 0 0;
+	}
+	
+	.footer__map{
+		font-weight: 700;
+		@include fontz-h(12px, 15px);
+		color: $active-color;
+		align-self: center;
+		text-decoration: none;
+		text-transform: uppercase;
+	
+		&:hover{
+			color: $accent-color;
+		}
+	}
+}
+
+
+.footer__contact-us{
+	display: flex;
+	align-items: center;
+
+	.footer__facebook-link{
+		margin: 0 26px 0 0;
+		position: relative;
+		line-height: 0;
+	
+		.footer__facebook-logo:hover{
+			fill: $accent-color;
+		}
+	}
+	
+	.footer__tel{
+		position: relative;
+		font-weight: 700;
+		@include fontz-h(16px, 20px);
+		color: $alt-blue;
+		text-decoration: none;
+		margin: 0 26px 0 0;
+	}
+	
+	.footer__mail{
+		text-decoration: none;
+		font-weight: 700;
+		@include fontz-h (16px, 20px);
+		color: $active-color;
+	
+		&:hover{
+			color: $accent-color;
+		}
+	}
+}
+
+.footer__site-info{
+	margin: 0;
+	@include fontz-h(16px, 20px);
+	color: $text-grey;
+}
+
+
+// footer__space .footer__line-hidden::before используеться на страницах где нет блока "post"
+.footer__space{
+	padding: 30px 0;
+}
+
+.footer__line-hidden::before{
+	display: none;
+}
+
+@media (max-width: 767px){
+	.footer__box{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer__contacts{
+		width: 100%;
+		margin: 0 0 30px;
+	}
+
+	.footer__address{
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+
+		.footer__street{
+			margin: 0 0 10px;
+		}
+
+		.footer__map{
+			margin: 0 0 21px;
+			text-transform: uppercase;
+		}	
+	}
+
+	.footer__contact-us{
+		flex-direction: column;
+
+		.footer__facebook-link{
+			margin: 0 0 10px;
+		}
+
+		.footer__tel{
+			margin: 0 0 10px;
+		}
+	
+
+	}
+
+	.footer__circle::after{
+		display: none;
+	}
+}
